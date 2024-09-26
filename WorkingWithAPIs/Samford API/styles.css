@@ -1,0 +1,116 @@
+/* Combined styles.css */
+
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e8f5e9; /* Light green background */
+    margin: 0;
+    padding: 20px;
+    color: #4e342e; /* Dark earthy text */
+}
+
+/* Main Content Area */
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff; /* White background for content */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    color: #6d4c41; /* Earthy brown for header */
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif; /* More elegant font */
+}
+
+/* H2 Styles */
+h2 {
+    color: #8d6e63; /* Slightly darker earthy brown */
+    margin-top: 20px; /* Space above the h2 */
+    margin-bottom: 10px; /* Space below the h2 */
+    font-family: 'Georgia', serif; /* Consistent with h1 */
+    text-align: left; /* Align to the left */
+    border-bottom: 2px solid #a5d6a7; /* Soft green underline */
+    padding-bottom: 5px; /* Padding below text */
+}
+
+/* Paragraph Styles */
+p {
+    line-height: 1.6; /* Increased line height for readability */
+    margin: 10px 0; /* Margin around paragraphs */
+    color: #3e2723; /* Darker earthy color for paragraphs */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Merge borders */
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #a5d6a7; /* Soft green border for cells */
+    padding: 10px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+}
+
+/* Table Header Styles */
+th {
+    background-color: #81c784; /* Light green for header */
+    color: white; /* White text for headers */
+    font-weight: bold;
+}
+
+/* Row Styles */
+tr:nth-child(even) {
+    background-color: #c8e6c9; /* Lighter green for even rows */
+}
+
+tr:hover {
+    background-color: #b2dfdb; /* Light teal on hover */
+}
+
+/* Button Styles */
+button {
+    background-color: #8d6e63; /* Earthy brown background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 8px 12px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+button:hover {
+    background-color: #795548; /* Darker brown on hover */
+}
+
+button:focus {
+    outline: 2px solid #fff; /* Visible outline for focus */
+    outline-offset: 2px;
+}
+
+/* Link Styles */
+a {
+    color: #1e88e5; /* Blue for links */
+    text-decoration: none; /* No underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    table {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+
+    button {
+        padding: 6px 10px; /* Adjust button padding for mobile */
+    }
+}

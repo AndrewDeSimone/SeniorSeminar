@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>National Parks</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+        <h1>National Parks</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id = "Parks">
+
+            </tbody>
+        </table>
+    </main>
+    <script>
+        async function getParks() {
+            let response = await fetch("https://compute.samford.edu/zoh/api/national-parks", {
+                method: "GET", 
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+            let data = await response.json();
+            return data;
+        }
+
+        async function update(id){
+            console.log('UPDATE');
+        }
+
+        async function remove(id){
+            console.log('REMOVE');
+        }
+
+        getParks().then(result => { 
+            result['nationalParks'].forEach(element => {
+                document.getElementById('Parks').insertAdjacentHTML('beforeend', `<tr"><td><a href="park.html?id=${element.id}" target="_self">${element.name}</a></td><td>${element.location}</td><td><button onclick ="update(${element.id})"></button></td><td><button onclick ="remove(${element.id})"></button></td></tr>`);
+            });
+        })
+    </script>
+  </body>
+</html>
