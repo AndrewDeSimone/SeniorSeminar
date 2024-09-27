@@ -19,6 +19,13 @@ main {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Form Container */
+.container {
+    max-width: 500px; /* Adjusted for form */
+    margin: auto; /* Center the container */
+    padding: 20px; /* Padding for form area */
+}
+
 /* Header Styles */
 h1 {
     text-align: center;
@@ -38,11 +45,53 @@ h2 {
     padding-bottom: 5px; /* Padding below text */
 }
 
-/* Paragraph Styles */
-p {
-    line-height: 1.6; /* Increased line height for readability */
-    margin: 10px 0; /* Margin around paragraphs */
-    color: #3e2723; /* Darker earthy color for paragraphs */
+/* Label Styles */
+label {
+    display: block; /* Block display for labels */
+    margin: 10px 0 5px; /* Space above and below labels */
+    font-weight: bold;
+}
+
+/* Input Styles */
+input[type="text"] {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside input */
+    border: 1px solid #a5d6a7; /* Soft green border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+/* Button Styles */
+button {
+    margin-top: 15px; /* Space above button */
+    background-color: #8d6e63; /* Earthy brown background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Smooth background transition */
+    display: block; /* Center the button */
+    width: 100%; /* Full width button */
+}
+
+button:hover {
+    background-color: #795548; /* Darker brown on hover */
+}
+
+button:focus {
+    outline: 2px solid #fff; /* Visible outline for focus */
+    outline-offset: 2px;
+}
+
+/* Link Styles */
+a {
+    color: #1e88e5; /* Blue for links */
+    text-decoration: none; /* No underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Table Styles */
@@ -74,36 +123,6 @@ tr:hover {
     background-color: #b2dfdb; /* Light teal on hover */
 }
 
-/* Button Styles */
-button {
-    background-color: #8d6e63; /* Earthy brown background */
-    color: white; /* White text */
-    border: none; /* No border */
-    padding: 8px 12px; /* Padding */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background 0.3s; /* Smooth background transition */
-}
-
-button:hover {
-    background-color: #795548; /* Darker brown on hover */
-}
-
-button:focus {
-    outline: 2px solid #fff; /* Visible outline for focus */
-    outline-offset: 2px;
-}
-
-/* Link Styles */
-a {
-    color: #1e88e5; /* Blue for links */
-    text-decoration: none; /* No underline */
-}
-
-a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
 /* Responsive Styles */
 @media (max-width: 600px) {
     table {
@@ -112,5 +131,9 @@ a:hover {
 
     button {
         padding: 6px 10px; /* Adjust button padding for mobile */
+    }
+
+    .container {
+        padding: 15px; /* Adjust padding for smaller screens */
     }
 }
