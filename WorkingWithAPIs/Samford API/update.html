@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>National Parks</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a href="index.html" target="_self"><h1>National Parks</h1></a>
+    <div class="container"></div>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location">
+        <button onclick="update()">Update</button>
+    </div>
+    <script>
+        async function getPark(id) {
+            let response = await fetch(`https://compute.samford.edu/zoh/api/national-parks/${id}.json`, {
+                method: "GET", 
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+            let data = await response.json();
+            return data;
+        }
+
+        var params = {};
+        location.search.slice(1).split("&").forEach(function(pair) {
+            pair = pair.split("=");
+            params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+        });
+
+        async function update() {
+            id = params['id']
+
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+            const urlencoded = new URLSearchParams();
+            urlencoded.append("name", document.getElementById("name").value);
+            urlencoded.append("location", document.getElementById("location").value);
+
+            const requestOptions = {
+                method: "PUT",
+                headers: myHeaders,
+                body: urlencoded,
+                redirect: "follow"
+            };
+
+            fetch(`https://compute.samford.edu/zoh/api/national-parks/edit/${id}.json`, requestOptions)
+                .then((response) => response.text())
+                .then((result) => console.log(result))
+                .catch((error) => console.error(error));
+
+            window.location.href = 'index.html'
+        }
+
+        getPark(params['id']).then(result => { 
+            document.getElementById('name').value = result['nationalPark'].name
+            document.getElementById('location').value = result['nationalPark'].location
+        })
+    </script>
+  </body>
+</html>

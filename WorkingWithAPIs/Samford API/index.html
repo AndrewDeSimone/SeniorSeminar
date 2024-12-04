@@ -35,11 +35,25 @@
         }
 
         async function update(id){
-            console.log('UPDATE');
+            document.location.href=`update.html?id=${id}`;
         }
 
         async function remove(id){
-            console.log('REMOVE');
+            const raw = "";
+
+            const requestOptions = {
+                method: "DELETE",
+                headers: {
+                    "Accept": "application/json"
+                },
+                body: "",
+                redirect: "follow"
+            };
+
+            fetch(`https://compute.samford.edu/zoh/api/national-parks/delete/${id}.json`, requestOptions)
+                .then((response) => response.text())
+                .then((result) => console.log(result))
+                .catch((error) => console.error(error));
         }
 
         getParks().then(result => { 
